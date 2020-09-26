@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="person"
+            type="com.example.cccandroidtest.domain.Person" />
+        <variable
+            name="estimate"
+            type="com.example.cccandroidtest.domain.Estimate" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.MainFragment">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/txv_company_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{estimate.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txv_company_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{estimate.address}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/txv_company_name" />
+
+        <TextView
+            android:id="@+id/txv_est_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/est_details"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txv_est_details" />
+
+        <TextView
+            android:id="@+id/txv_est_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/est_number"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/txv_revision_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/revision_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txv_est_number"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/txv_est_number_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(estimate.number)}"
+            app:layout_constraintEnd_toEndOf="@+id/txv_est_number"
+            app:layout_constraintStart_toStartOf="@+id/txv_est_number"
+            app:layout_constraintTop_toBottomOf="@+id/txv_est_number" />
+
+        <TextView
+            android:id="@+id/txv_revision_number_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{Integer.toString(estimate.revisionNumber)}"
+            app:layout_constraintEnd_toEndOf="@+id/txv_revision_number"
+            app:layout_constraintStart_toStartOf="@+id/txv_revision_number"
+            app:layout_constraintTop_toBottomOf="@+id/txv_revision_number" />
+
+        <TextView
+            android:id="@+id/txv_created"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/created"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/txv_est_number_value"
+            app:layout_constraintStart_toStartOf="@+id/txv_est_number_value"
+            app:layout_constraintTop_toBottomOf="@+id/txv_est_number_value" />
+
+        <TextView
+            android:id="@+id/txv_created_by"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/created_by"
+            app:layout_constraintEnd_toEndOf="@+id/txv_revision_number_value"
+            app:layout_constraintStart_toStartOf="@+id/txv_revision_number_value"
+            app:layout_constraintTop_toBottomOf="@+id/txv_revision_number_value" />
+
+        <TextView
+            android:id="@+id/txv_created_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{estimate.createdDate.substring(0, 10)}"
+            app:layout_constraintEnd_toEndOf="@+id/txv_created"
+            app:layout_constraintStart_toStartOf="@+id/txv_created"
+            app:layout_constraintTop_toBottomOf="@+id/txv_created" />
+
+        <TextView
+            android:id="@+id/txv_created_by_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{person.firstName+` `+person.lastName}"
+            app:layout_constraintEnd_toEndOf="@+id/txv_created_by"
+            app:layout_constraintStart_toStartOf="@+id/txv_created_by"
+            app:layout_constraintTop_toBottomOf="@+id/txv_created_by" />
+
+        <TextView
+            android:id="@+id/txv_requester"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/requester"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/txv_created_value"
+            app:layout_constraintStart_toStartOf="@+id/txv_created_value"
+            app:layout_constraintTop_toBottomOf="@+id/txv_created_value" />
+
+        <TextView
+            android:id="@+id/txv_requester_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{person.firstName+` `+person.lastName}"
+            app:layout_constraintStart_toStartOf="@+id/txv_requester"
+            app:layout_constraintTop_toBottomOf="@+id/txv_requester" />
+
+        <TextView
+            android:id="@+id/txv_contact"
+            android:layout_width="0dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/contact"
+            app:layout_constraintEnd_toEndOf="@+id/txv_created_by_value"
+            app:layout_constraintStart_toStartOf="@+id/txv_created_by_value"
+            app:layout_constraintTop_toBottomOf="@+id/txv_created_by_value" />
+
+        <TextView
+            android:id="@+id/txv_contact_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{person.firstName+` `+person.lastName}"
+            app:layout_constraintEnd_toEndOf="@+id/txv_contact"
+            app:layout_constraintStart_toStartOf="@+id/txv_contact"
+            app:layout_constraintTop_toBottomOf="@+id/txv_contact" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
